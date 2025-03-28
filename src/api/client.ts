@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Student, Class, Professor, Department } from '../types/api';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://render-backend-2ceu.onrender.com'; //'http://localhost:3001';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
