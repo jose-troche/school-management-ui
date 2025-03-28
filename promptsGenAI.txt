@@ -1,0 +1,3 @@
+write a complete react application in typescript for this openapi spec. Include form validation, search, filtering, and pagination. Use the Material-UI component library
+
+Create form and page components for Students, Classes, Professors, and Departments
