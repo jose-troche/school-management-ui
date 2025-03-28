@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jose-troche/school-management-ui/static/css/main.e6c13ad2.css",
+    "main.js": "/jose-troche/school-management-ui/static/js/main.06914862.js",
+    "static/js/453.19d4e462.chunk.js": "/jose-troche/school-management-ui/static/js/453.19d4e462.chunk.js",
+    "index.html": "/jose-troche/school-management-ui/index.html",
+    "main.e6c13ad2.css.map": "/jose-troche/school-management-ui/static/css/main.e6c13ad2.css.map",
+    "main.06914862.js.map": "/jose-troche/school-management-ui/static/js/main.06914862.js.map",
+    "453.19d4e462.chunk.js.map": "/jose-troche/school-management-ui/static/js/453.19d4e462.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.06914862.js"
+  ]
+}
