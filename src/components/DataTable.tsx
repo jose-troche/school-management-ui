@@ -26,6 +26,7 @@ interface DataTableProps {
   data: any[];
   onEdit?: (item: any) => void;
   onDelete?: (item: any) => void;
+  onRowClick?: (item: any) => void;
 }
 
 export const DataTable: React.FC<DataTableProps> = ({
@@ -33,6 +34,7 @@ export const DataTable: React.FC<DataTableProps> = ({
   data,
   onEdit,
   onDelete,
+  onRowClick,
 }) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -86,7 +88,14 @@ export const DataTable: React.FC<DataTableProps> = ({
             {filteredData
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row, index) => (
-                <TableRow hover role="checkbox" tabIndex={-1} key={index}>
+                <TableRow
+                  hover
+                  role="checkbox"
+                  tabIndex={-1}
+                  key={index}
+                  onClick={() => onRowClick?.(row)}
+                  sx={{ cursor: onRowClick ? 'pointer' : 'default' }}
+                >
                   {columns.map((column) => (
                     <TableCell key={column.id}>
                       {row[column.id]}

@@ -13,6 +13,7 @@ import { StudentsPage } from './pages/StudentsPage';
 import { ClassesPage } from './pages/ClassesPage';
 import { ProfessorsPage } from './pages/ProfessorsPage';
 import { DepartmentsPage } from './pages/DepartmentsPage';
+import { ClassDetailsPage } from './pages/ClassDetailsPage';
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App: React.FC = () => {
               <Route path="/classes" element={<ClassesPage />} />
               <Route path="/professors" element={<ProfessorsPage />} />
               <Route path="/departments" element={<DepartmentsPage />} />
+              <Route path="/classes/:id" element={<ClassDetailsPage />} />
               <Route path="/" element={<StudentsPage />} />
             </Routes>
           </Box>

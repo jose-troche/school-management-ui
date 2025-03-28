@@ -12,6 +12,7 @@ import { DataTable } from '../components/DataTable';
 import { ClassForm } from '../components/ClassForm';
 import { classApi, professorApi, departmentApi } from '../api/client';
 import { Class } from '../types/api';
+import { useNavigate } from 'react-router-dom';
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
@@ -22,6 +23,7 @@ const columns = [
 ];
 
 export const ClassesPage: React.FC = () => {
+  const navigate = useNavigate();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [selectedClass, setSelectedClass] = useState<Class | undefined>();
   const queryClient = useQueryClient();
@@ -94,6 +96,12 @@ export const ClassesPage: React.FC = () => {
     return <Typography>Loading...</Typography>;
   }
 
+  const handleRowClick = (classData: Class) => {
+    if (classData.id) {
+      navigate(`/classes/${classData.id}`);
+    }
+  };
+
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3 }}>
@@ -116,6 +124,7 @@ export const ClassesPage: React.FC = () => {
         }))}
         onEdit={handleOpenForm}
         onDelete={handleDelete}
+        onRowClick={handleRowClick}
       />
 
       <Dialog
